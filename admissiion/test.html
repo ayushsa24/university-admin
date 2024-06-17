@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: antiquewhite; color: rgb(56, 59, 221)">
+    <h2>University Admission</h2> 
+    <div>
+        <form action="test.php" method="post">
+            <label for="name">Name:</label>
+            &nbsp;&nbsp;&nbsp;
+            <input type="text" name="FirstName" id="fName">
+            <br><br><br>
+            <label for="adhaar">Aadhaar number:</label>
+            &nbsp;&nbsp;&nbsp;
+            <input type="number" name="Uid" id="Uid">
+            <br><br><br>
+            <label for="dob">Date of Birth:</label>
+            &nbsp;&nbsp;&nbsp;
+            <input type="date" name="date" id="date">
+            <br><br><br>
+            <label for="state">State:</label>
+            &nbsp;&nbsp;&nbsp;
+            <input type="text" id="state">
+            <br><br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input style="background-color: rgb(161, 242, 235); color: rgb(15, 144, 242)" type="button" value="Admit" onclick="openNewPage()">
+        </form>
+    </div>
+    <script>
+        function openNewPage() {
+            var x = document.getElementById("fName").value;
+            var y = document.getElementById("Uid").value;
+            var z = document.getElementById("date").value;
+            var a = document.getElementById("state").value;
+            var b = x + 'is no admitted to college <br> ' + y + 'adhaar number is invalid' + z + ','  + a;
+
+            // Open a new window with the concatenated string as content
+            var newWindow = window.open('', '_blank');
+            newWindow.document.write('<html><head><title>Admission Details</title></head><body style="background-color: antiquewhite; color: rgb(56, 59, 221)">');
+            newWindow.document.write('<h1>Admission Details</h1>');
+            newWindow.document.write('<p>' + b + '</p>');
+            newWindow.document.write('</body></html>');
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>
